@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { photographyItems } from "@/data/site";
 import { Container } from "./Container";
 import { ImagePanel } from "./ImagePanel";
@@ -44,18 +43,14 @@ export function PhotographySection() {
 
         <ScrollReveal variant="fade" delay={0.1}>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
-            {photographyItems.map((item, index) => (
-              <motion.button
+            {photographyItems.map((item) => (
+              <button
                 key={item.id}
                 type="button"
                 onClick={() => setPanelImage({ src: item.image, title: item.title })}
-                initial={{ opacity: 0, scale: 0.98 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.6, delay: index * 0.08 }}
                 className="group overflow-hidden rounded-2xl bg-slate-100 text-left shadow-soft"
               >
-                <div className="relative h-80 overflow-hidden sm:h-[26rem]">
+                <div className="relative aspect-[4/5] overflow-hidden">
                   {failed.has(item.image) ? (
                     <img
                       src={item.image}
@@ -74,7 +69,7 @@ export function PhotographySection() {
                     />
                   )}
                 </div>
-              </motion.button>
+              </button>
             ))}
           </div>
         </ScrollReveal>
