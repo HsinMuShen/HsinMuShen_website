@@ -111,7 +111,7 @@ export const webProjects = [
   {
     title: "Solar System Website",
     description:
-      "An in-progress interactive solar system simulator for exploring planets, orbits, and motion in a calm browser-based universe.",
+      "Still in progress — an interactive solar system simulator for exploring planets and motion. Please wait for the future public release.",
     image: "/website/04.gif",
     link: "#",
   },
@@ -222,7 +222,7 @@ export const skillGroups = [
 ];
 
 export const socialLinks = [
-  { label: "Instagram", href: "https://www.instagram.com/nomad_sketching/" },
+  { label: "Instagram", href: "https://www.instagram.com/eiectrycity/" },
   { label: "LinkedIn", href: "https://www.linkedin.com/in/hsin-mu-shen/" },
   { label: "GitHub", href: "https://github.com/HsinMuShen" },
   { label: "Email", href: "mailto:hsinmushen84@gmail.com" },
