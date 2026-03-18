@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { photographyItems } from "@/data/site";
 import { Container } from "./Container";
 import { ImagePanel } from "./ImagePanel";
@@ -9,7 +8,6 @@ import { ScrollReveal } from "./ScrollReveal";
 
 export function PhotographySection() {
   const [panelImage, setPanelImage] = useState<{ src: string; title: string } | null>(null);
-  const [failed, setFailed] = useState<Set<string>>(new Set());
 
   return (
     <Container id="photography" className="py-24 sm:py-28">
@@ -41,33 +39,23 @@ export function PhotographySection() {
           </p>
         </ScrollReveal>
 
-        <ScrollReveal variant="fade" delay={0.1}>
+        <ScrollReveal variant="fade" delay={0.1} amount={0.05}>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 lg:gap-6">
             {photographyItems.map((item) => (
               <button
                 key={item.id}
                 type="button"
                 onClick={() => setPanelImage({ src: item.image, title: item.title })}
-                className="group overflow-hidden rounded-2xl bg-slate-100 text-left shadow-soft"
+                className="group w-full overflow-hidden rounded-2xl bg-slate-100 text-left shadow-soft"
               >
-                <div className="relative aspect-[4/5] overflow-hidden">
-                  {failed.has(item.image) ? (
-                    <img
-                      src={item.image}
-                      alt={item.title}
-                      className="h-full w-full object-cover transition duration-700 group-hover:scale-105"
-                    />
-                  ) : (
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      fill
-                      className="object-cover transition duration-700 group-hover:scale-105"
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      unoptimized
-                      onError={() => setFailed((prev) => new Set(prev).add(item.image))}
-                    />
-                  )}
+                <div className="relative w-full aspect-[4/5] overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    loading="lazy"
+                    decoding="async"
+                    className="absolute inset-0 h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                  />
                 </div>
               </button>
             ))}
