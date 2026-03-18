@@ -11,7 +11,7 @@ export function PhilosophySection() {
               Philosophy
             </p>
             <blockquote className="font-serif text-3xl leading-tight sm:text-4xl">
-              "{philosophy.quote}"
+              {`“${philosophy.quote}”`}
             </blockquote>
           </div>
 
