@@ -34,6 +34,57 @@ export const aboutStory = {
   mainImageAlt: "Hsin Mu Shen",
 };
 
+export const creativePassions = [
+  {
+    title: "Photography",
+    subtitle: "Light, framing, and observation",
+    description:
+      "A practice of noticing mood, texture, and timing. Photography informs the visual language of every digital experience by teaching patience, restraint, and composition.",
+    accent: "from-[#d97706] via-[#fbbf24] to-[#fde68a]",
+  },
+  {
+    title: "Sketching",
+    subtitle: "Ideas captured by hand",
+    description:
+      "Sketching keeps experimentation tactile and immediate. It is where rough concepts, environments, and visual rhythms begin before they evolve into finished work.",
+    accent: "from-[#1d4ed8] via-[#60a5fa] to-[#bfdbfe]",
+  },
+  {
+    title: "Web and Software",
+    subtitle: "Systems shaped with feeling",
+    description:
+      "Technical work becomes more compelling when it carries emotion and intent. Software here is treated not just as functionality, but as a medium for clarity and experience.",
+    accent: "from-[#0f766e] via-[#2dd4bf] to-[#ccfbf1]",
+  },
+];
+
+export const technicalProjects = [
+  {
+    title: "Atmospheric Portfolio System",
+    category: "Personal Brand Platform",
+    summary:
+      "A modular portfolio experience that combines editorial storytelling, immersive layouts, and reusable UI patterns for creative professionals.",
+    tags: ["Next.js", "Tailwind CSS", "Motion Design"],
+    link: "#",
+  },
+  {
+    title: "Creative Workflow Dashboard",
+    category: "Internal Tooling",
+    summary:
+      "A visual project dashboard concept that helps teams move from loose ideas to structured delivery while preserving creative context.",
+    tags: ["React", "TypeScript", "UX Systems"],
+    link: "#",
+  },
+  {
+    title: "Gallery Commerce Experience",
+    category: "Interactive Web Build",
+    summary:
+      "A refined storefront concept for visual products, blending art direction, conversion thinking, and a fast responsive frontend foundation.",
+    tags: ["Frontend", "E-commerce", "Accessibility"],
+    link: "#",
+  },
+];
+
 // Web development work for carousel — each card: preview image, title, description, link
 export const webProjects = [
   {
@@ -105,6 +156,37 @@ export const photographyItems = [
   { id: "p10", image: "/photography/photography-10.jpeg", title: "Photo 10" },
   { id: "p11", image: "/photography/photography-11.jpeg", title: "Photo 11" },
   { id: "p12", image: "/photography/photography-12.jpg", title: "Photo 12" }
+];
+
+export const galleryShowcase = [
+  {
+    title: "Street Light Study",
+    type: "Photography",
+    note: "Placeholder series exploring cinematic light, distance, and city atmosphere.",
+    style: "from-[#0f172a] via-[#4338ca] to-[#f59e0b]",
+    image: "/gallery-photo-01.svg",
+  },
+  {
+    title: "Notebook Fragments",
+    type: "Sketchbook",
+    note: "Placeholder sketches focused on environments, gestures, and unfinished visual ideas.",
+    style: "from-[#faf5ff] via-[#e9d5ff] to-[#c4b5fd]",
+    image: "/gallery-sketch-01.svg",
+  },
+  {
+    title: "Silent Corners",
+    type: "Photography",
+    note: "Placeholder compositions of architecture, empty spaces, and quiet transitions.",
+    style: "from-[#1f2937] via-[#4b5563] to-[#cbd5e1]",
+    image: "/gallery-photo-02.svg",
+  },
+  {
+    title: "Interface Motions",
+    type: "Visual Study",
+    note: "Placeholder experiments where interface details are treated like choreography and rhythm.",
+    style: "from-[#052e16] via-[#15803d] to-[#86efac]",
+    image: "/gallery-motion-01.svg",
+  },
 ];
 
 export const philosophy = {

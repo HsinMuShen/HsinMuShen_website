@@ -6,6 +6,8 @@ import { siteConfig, socialLinks } from "@/data/site";
 import { Container } from "./Container";
 
 export function HeroSection() {
+  const heroFooter = (siteConfig as any).heroFooter as string | undefined;
+
   return (
     <Container id="top" className="relative overflow-hidden pt-20 sm:pt-28 lg:pt-36">
       <div className="absolute inset-x-0 top-0 -z-10 h-[32rem] bg-hero-grid opacity-60" />
@@ -44,8 +46,8 @@ export function HeroSection() {
             {(siteConfig.heroParagraphs ?? []).map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
-            {siteConfig.heroFooter ? (
-              <p className="font-medium text-ink">{siteConfig.heroFooter}</p>
+            {heroFooter ? (
+              <p className="font-medium text-ink">{heroFooter}</p>
             ) : null}
           </motion.div>
           <motion.div
