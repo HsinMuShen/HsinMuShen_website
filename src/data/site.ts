@@ -17,12 +17,12 @@ export const siteConfig = {
 };
 
 export const navigationItems = [
-  { label: "About", href: "#about" },
-  { label: "Website", href: "#website" },
-  { label: "Sketching", href: "#sketching" },
-  { label: "Photography", href: "#photography" },
-   { label: "Travel", href: "#travel" },
-  { label: "Contact", href: "#contact" },
+  { label: "About", href: "/about" },
+  { label: "Website", href: "/#website" },
+  { label: "Sketching", href: "/#sketching" },
+  { label: "Photography", href: "/#photography" },
+  { label: "Travel", href: "/#travel" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export const aboutStory = {

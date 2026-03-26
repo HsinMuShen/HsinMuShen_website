@@ -12,7 +12,7 @@ export function Navbar() {
     <header className="sticky top-0 z-50 border-b border-white/70 bg-canvas/90 backdrop-blur-xl">
       <nav className="mx-auto max-w-6xl px-6 py-4 sm:px-8 lg:px-10">
         <div className="flex items-center justify-between gap-4">
-          <a href="#top" className="flex items-center gap-3 text-sm font-semibold text-ink">
+          <a href="/" className="flex items-center gap-3 text-sm font-semibold text-ink">
             {showLogo ? (
               <span className="relative inline-flex h-10 w-10 overflow-hidden rounded-full bg-brand-600 shadow-lg shadow-brand-600/20">
                 <Image src={siteConfig.logo!} alt="" fill className="object-cover" sizes="40px" />

@@ -57,7 +57,7 @@ export function HeroSection() {
             className="flex flex-wrap items-center gap-4"
           >
             <a
-              href="#about"
+              href="/about"
               className="inline-flex items-center justify-center rounded-full bg-ink px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:opacity-90"
             >
               About

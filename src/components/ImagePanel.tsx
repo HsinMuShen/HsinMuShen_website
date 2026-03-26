@@ -10,9 +10,11 @@ type ImagePanelProps = {
   caption?: string;
   isOpen: boolean;
   onClose: () => void;
+  onNext?: () => void;
+  onPrev?: () => void;
 };
 
-export function ImagePanel({ src, alt, caption, isOpen, onClose }: ImagePanelProps) {
+export function ImagePanel({ src, alt, caption, isOpen, onClose, onNext, onPrev }: ImagePanelProps) {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -23,6 +25,8 @@ export function ImagePanel({ src, alt, caption, isOpen, onClose }: ImagePanelPro
     if (!isOpen) return;
     const handleEscape = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
+      if (e.key === "ArrowRight" && onNext) onNext();
+      if (e.key === "ArrowLeft" && onPrev) onPrev();
     };
     document.addEventListener("keydown", handleEscape);
     document.body.style.overflow = "hidden";
@@ -30,7 +34,7 @@ export function ImagePanel({ src, alt, caption, isOpen, onClose }: ImagePanelPro
       document.removeEventListener("keydown", handleEscape);
       document.body.style.overflow = "";
     };
-  }, [isOpen, onClose]);
+  }, [isOpen, onClose, onNext, onPrev]);
 
   const panel = (
     <AnimatePresence>
@@ -71,6 +75,30 @@ export function ImagePanel({ src, alt, caption, isOpen, onClose }: ImagePanelPro
               ) : null}
             </motion.div>
           </div>
+          {onPrev ? (
+            <button
+              type="button"
+              onClick={onPrev}
+              className="absolute left-4 top-1/2 z-10 -translate-y-1/2 flex h-12 w-12 items-center justify-center rounded-full bg-white/15 text-white transition hover:bg-white/25 pointer-events-auto"
+              aria-label="Previous image"
+            >
+              <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+              </svg>
+            </button>
+          ) : null}
+          {onNext ? (
+            <button
+              type="button"
+              onClick={onNext}
+              className="absolute right-4 top-1/2 z-10 -translate-y-1/2 flex h-12 w-12 items-center justify-center rounded-full bg-white/15 text-white transition hover:bg-white/25 pointer-events-auto"
+              aria-label="Next image"
+            >
+              <svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </button>
+          ) : null}
           <button
             type="button"
             onClick={onClose}
