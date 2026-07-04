@@ -18,6 +18,7 @@ export const siteConfig = {
 
 export const navigationItems = [
   { label: "About", href: "/about" },
+  { label: "Workation", href: "/workation" },
   { label: "Website", href: "/#website" },
   { label: "Sketching", href: "/#sketching" },
   { label: "Photography", href: "/#photography" },
